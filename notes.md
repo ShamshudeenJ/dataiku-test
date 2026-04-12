@@ -1,5 +1,8 @@
 # Dataiku
 
+## Introduction
+* Projects can be import/exported
+
 
 ### Installation of Dataiku DSS on Docker
 ```shell
@@ -12,6 +15,44 @@ Open http://localhost:10000
 
 
 ## Components
-* Flow
-* Dataset
-* Recipe - Multiple Steps
+* Project
+* Flow: Visual narrative of data journey
+* Dataset: Piece of data in tabular format; Each column is of same storage type. Represented as square.
+* Recipe - Has multiple Steps. Can be Visual, code and plugins. Represented as Circle. Has optional pre and post filter.
+  * Prepare data has date conversion, formulas and Regex
+  * Joins: Left, right, inner, outer, fuzzy, geo
+  * Group: key and aggregators
+  * Window: definition and aggregation
+  * Sort
+  * Top N
+  * Pivot
+  * Filter: condition or formaula or SQL expresion
+  * Sample: first records or random or Column subset or Class rebalance
+  * Distinct: remove duplicates(all) or distinct based on subset of columns
+  * Stack (Append two or more data): Union or Intersection or Use schema or Use column order or Manual remap or Custom schema.
+  * Split: Map values on single column or Random or Filters or Dispatch percentile
+  * Sync (Copy a dataset): Free output schema or Maintain strict schema
+* Connectors
+
+## Dataiku Cloud
+* Launchpad is the administrative hub
+* Spaces
+    - Nodes: Design, Automation, API and Govern nodes.
+
+
+### Check Dataiku version
+```bash
+[dataiku@caab3f984721 ~]$ ls
+dataiku-dss-14.4.1  dss  run.sh
+[dataiku@caab3f984721 ~]$ cd dss/
+[dataiku@caab3f984721 dss]$ ls
+R.lib          bin        config         databases         html-apps        instance-id.txt  lib               managed_folders          notebook_results  pyenv         timelines           uploads
+ai-assistants  caches     cost-limiting  dss-version.json  install-support  jobs             local             model_evaluation_stores  plugins           run           tmp                 workload-folders
+analysis-data  code-envs  data-catalog   exports           install.ini      jupyter-run      managed_datasets  most-used-datasets       privtmp           saved_models  unified-monitoring
+[dataiku@caab3f984721 dss]$ cat dss-version.json
+{
+  "conf_version": "14400",
+  "product_version": "14.4.1",
+  "product_commitid": ""
+}[dataiku@caab3f984721 dss]$
+```
