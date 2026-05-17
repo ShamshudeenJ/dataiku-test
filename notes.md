@@ -63,8 +63,23 @@ Open http://localhost:10000
 * Used in Visual recipes, scenarios, code recipes and dataiku applications
 * Defined as **JSON** object
 * Used as `${var_name}` (use `''` for string variables)
+* Or used as `variables["var_name"]`
 
 
+## Build modes
+* Types
+  - Build only this
+  - Build upstream
+  - Build downstream
+
+## Connections
+* Datasets can be changed connections (from dir CSVs to postgreSQL) even after it is created.
+
+## Computation strategies
+* DSS engine: in-memory or streamed
+* In database
+* Hadoop/Spark cluster
+* Kubernetes/Docker
 
 
 ### Check Dataiku version
