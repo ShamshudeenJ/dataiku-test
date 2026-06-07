@@ -71,6 +71,14 @@ Open http://localhost:10000
   - Build only this
   - Build upstream
   - Build downstream
+* Rule template: same rules used across datasets; can be customized for that dataset.
+
+## Data Quality
+* Rule outputs are:
+  - OK 
+  - Error
+  - Warning: fails a soft condition
+  - Empty: Rule cannot be computed.
 
 ## Connections
 * Datasets can be changed connections (from dir CSVs to postgreSQL) even after it is created.
